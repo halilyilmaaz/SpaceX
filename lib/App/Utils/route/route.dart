@@ -11,7 +11,7 @@ import 'package:spacex/App/Utils/route/page_navigation.dart';
 import 'package:spacex/Core/Models/Response/HomeModel.dart';
 import 'package:spacex/Screens/Detail/detail_view.dart';
 import 'package:spacex/Screens/Home/home_view.dart';
-import 'package:spacex/Screens/hacker.dart';
+import 'package:spacex/Screens/PresentScreen/hacker_video_view.dart';
 
 class Screens extends PageNavigation{
   static Screens? _screens;
@@ -30,19 +30,18 @@ class Screens extends PageNavigation{
 
 
 class _MainScreens extends PageNavigation{
-  
   String homePage = _getMainScreenName('homePage');
   String detailPage = _getMainScreenName('detailPage');
   String hackerPage = _getMainScreenName('hackerPage');
 
   Route<dynamic>? onGenerateRoute(RouteSettings settings){
     if (settings.name == homePage) {
-      return goToPage(HomeDeneme(), settings);
+      return goToPage(SpaceXHome(), settings);
     } else if(settings.name == detailPage){
       final argument = settings.arguments as HomeResponseModel;
       return goToPage(DetailView(model: argument), settings);
     } else if(settings.name == hackerPage){
-      return goToPage(HackerView(), settings);
+      return goToPage(HackerVideoView(), settings);
     }
     else{
       goToPage(Container(color:Colors.black), settings);

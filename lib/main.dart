@@ -29,7 +29,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       onGenerateRoute: Screens.instance.main.onGenerateRoute,
-      home: SpaceXHome()
+      home: BlocProvider<SpaceXBloc>(
+        create: (_) => SpaceXBloc(HttpClient()),
+        child: const SpaceXHome(),
+      ),
     );
   }
 }

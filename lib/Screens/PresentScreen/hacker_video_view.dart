@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class HackerView extends StatefulWidget {
-  const HackerView({Key? key}) : super(key: key);
+class HackerVideoView extends StatefulWidget {
+  const HackerVideoView({Key? key}) : super(key: key);
 
   @override
-  State<HackerView> createState() => _HackerViewState();
+  State<HackerVideoView> createState() => _HackerVideoViewState();
 }
 
-class _HackerViewState extends State<HackerView> {
+class _HackerVideoViewState extends State<HackerVideoView> {
 
   final videoURL = "https://youtu.be/RfiQYRn7fBg";
 

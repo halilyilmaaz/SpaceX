@@ -6,6 +6,7 @@ class CustomOutline extends StatelessWidget {
   final double _width;
   final double _height;
   final EdgeInsetsGeometry _padding;
+  final Function()? onTap;
 
   CustomOutline({
     Key? key,
@@ -16,6 +17,7 @@ class CustomOutline extends StatelessWidget {
     required double width,
     required double height,
     required EdgeInsetsGeometry padding,
+    this.onTap,
   })  : _painter = _GradientPainter(strokeWidth: strokeWidth, radius: radius, gradient: gradient),
         _child = child,
         _width = width,
@@ -25,13 +27,16 @@ class CustomOutline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: _painter,
-      child: Container(
-        width: _width,
-        height: _height,
-        child: _child,
-        padding: _padding,
+    return InkWell(
+      onTap: onTap,
+      child: CustomPaint(
+        painter: _painter,
+        child: Container(
+          width: _width,
+          height: _height,
+          child: _child,
+          padding: _padding,
+        ),
       ),
     );
   }
