@@ -8,11 +8,11 @@ class HttpUrl {
   /// Secret Key
   static const String secretKey = '';
 
-  ///  Login Url
-  static const loginUrl = '';
+  /// RocketList
+  static const String rocketList = 'v4/launches';
 
-  /// Register Url
-  static const registerUrl = '';
+  /// Delete Rocket 
+  static String deleteRocket(String rocketId) => '/$rocketId';
 
   ///  Home sayfasındaki dashboard
   static const homeUrl = "home.json";

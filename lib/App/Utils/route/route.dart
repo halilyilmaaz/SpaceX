@@ -1,7 +1,3 @@
-
-
-
-
 import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
@@ -11,9 +7,9 @@ import 'package:spacex/App/Utils/route/page_navigation.dart';
 import 'package:spacex/Core/Models/Response/HomeModel.dart';
 import 'package:spacex/Screens/Detail/detail_view.dart';
 import 'package:spacex/Screens/Home/home_view.dart';
-import 'package:spacex/Screens/hacker.dart';
 
-class Screens extends PageNavigation{
+class Screens extends PageNavigation {
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   static Screens? _screens;
   late _MainScreens main;
 
@@ -25,32 +21,26 @@ class Screens extends PageNavigation{
     _screens = Screens();
   }
 
+  static BuildContext get context => Screens.instance.navigatorKey.currentContext!;
+
   static Screens get instance => _screens ?? Screens._init();
 }
 
-
-class _MainScreens extends PageNavigation{
-  
+class _MainScreens extends PageNavigation {
   String homePage = _getMainScreenName('homePage');
   String detailPage = _getMainScreenName('detailPage');
-  String hackerPage = _getMainScreenName('hackerPage');
 
-  Route<dynamic>? onGenerateRoute(RouteSettings settings){
+  Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     if (settings.name == homePage) {
-      return goToPage(HomeDeneme(), settings);
-    } else if(settings.name == detailPage){
+      return goToPage(SpaceXHome(), settings);
+    } else if (settings.name == detailPage) {
       final argument = settings.arguments as HomeResponseModel;
       return goToPage(DetailView(model: argument), settings);
-    } else if(settings.name == hackerPage){
-      return goToPage(HackerView(), settings);
-    }
-    else{
-      goToPage(Container(color:Colors.black), settings);
+    } else {
+      goToPage(Container(color: Colors.black), settings);
     }
   }
 }
-
-
 
 /// Hiç bi Modül altında olmayan ekranların isimlendirme şablonu bu Fon. la belirlenir
 String _getMainScreenName(String screenName) {

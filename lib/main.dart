@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spacex/App/Utils/Extensions/log+Extension.dart';
-import 'package:spacex/App/Utils/route/route.dart';
+import 'package:spacex/App/Utils/Route/route.dart';
 import 'package:spacex/Core/Bloc/spacex_bloc.dart';
 import 'package:spacex/Screens/Home/home_view.dart';
 
@@ -21,16 +21,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Screens.instance;
-    return MaterialApp(
-      title: 'SpaceX',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      onGenerateRoute: Screens.instance.main.onGenerateRoute,
-      home: SpaceXHome()
-    );
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider<SpaceXBloc>(create: (_) => SpaceXBloc()),
+        ],
+        child: MaterialApp(
+          title: 'SpaceX',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          onGenerateRoute: Screens.instance.main.onGenerateRoute,
+          home: const SpaceXHome(),
+        ));
   }
 }
 
