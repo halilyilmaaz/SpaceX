@@ -9,20 +9,21 @@ https://www.figma.com/file/zGHM3JSvU2JZPDHREDKjwq/SpaceX?type=design&mode=design
 
 ## Screenshots
 
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-07-29%20at%2016.28.19.png?raw=true)
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-07-30%20at%2016.58.38.png?raw=true)
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-07-31%20at%2003.27.11.png?raw=true)
+
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-07-29%20at%2016.28%201.png?raw=true)
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-07-30%20at%2016.58%201.png?raw=true)
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-07-31%20at%2003.27%201.png?raw=true)
 
 
   
 ## Store ScreenShots
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/storeSS/Apple%20iPhone%2011%20Pro%20Max%20Screenshot%200.png?raw=true)
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/storeSS/Apple%20iPhone%2011%20Pro%20Max%20Screenshot%201.png?raw=true)
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/storeSS/Apple%20iPhone%2011%20Pro%20Max%20Screenshot%202.png?raw=true)
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Apple%20iPhone%2011%20Pro%20Max%20Screenshot%200.png?raw=true)
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Apple%20iPhone%2011%20Pro%20Max%20Screenshot%201.png?raw=true)
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Apple%20iPhone%2011%20Pro%20Max%20Screenshot%202.png?raw=true)
 ## Extensions
 
 In this project, the splash screen was designed using Launch.Storyboard in XCode.
-![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/main/assets/ss/Ekran%20Resmi%202023-07-29%2016.52.26.png?raw=true)
+![Uygulama Ekran Görüntüsü](https://github.com/halilyilmaaz/SpaceX/blob/development/assets/ss/Ekran%20Resmi%202023-07-29%2016.52%201.png?raw=true)
 
   
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
