@@ -6,7 +6,7 @@ import 'package:spacex/App/Constants/http_constants.dart';
 class HttpClients {
   final Map<String, String> headers = {"content-type": "application/json", 'authorization': 'Bearer ', 'lang': 'tr'};
 
-  Future<http.Response?> get(String endpoint, String body,{Map<String, String>? header}) async {
+  Future<http.Response?> get(String endpoint, String body,{Map<String, dynamic> apiParameters = const {}, Map<String, String>? header}) async {
 
     Map<String, String> header0 = {};
     if (header != null) {

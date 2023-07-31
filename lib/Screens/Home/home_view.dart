@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spacex/App/Utils/components/Buttons/gradient_button.dart';
-import 'package:spacex/App/Utils/components/view/spacex_background_view.dart';
-import 'package:spacex/App/Utils/route/route.dart';
+import 'package:spacex/App/Utils/Components/Buttons/gradient_button.dart';
+import 'package:spacex/App/Utils/Components/view/spacex_background_view.dart';
+import 'package:spacex/App/Utils/Route/route.dart';
 import 'package:spacex/Core/Bloc/spacex_bloc.dart';
 import 'package:spacex/Core/Models/Response/HomeModel.dart';
 import 'package:spacex/Screens/Detail/detail_view.dart';
@@ -17,6 +17,10 @@ class _SpaceXHomeState extends State<SpaceXHome> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _refresh();
+  }
+
+  Future _refresh() async {
     context.read<SpaceXBloc>().add(SpaceXGet());
   }
 
@@ -31,7 +35,7 @@ class _SpaceXHomeState extends State<SpaceXHome> {
               return const Center(child: CircularProgressIndicator());
             } else if (state.data.isNotEmpty) {
               return RefreshIndicator(
-                onRefresh: () => Future.delayed(const Duration(seconds: 3)),
+                onRefresh: () => _refresh(),
                 child: ListView.builder(
                     itemCount: state.data.length,
                     itemBuilder: (context, index) {
@@ -76,6 +80,7 @@ class _SpaceXHomeState extends State<SpaceXHome> {
                     }),
               );
             } else {
+              //return FadeInImage.assetNetwork(placeholder: placeholder, image: image)
               return const Center(
                   child: Text(
                 "you are in a space now!",

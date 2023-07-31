@@ -6,7 +6,7 @@ class CustomOutline extends StatelessWidget {
   final double _width;
   final double _height;
   final EdgeInsetsGeometry _padding;
-  final Function()? onTap;
+  final void Function()? onTap;
 
   CustomOutline({
     Key? key,

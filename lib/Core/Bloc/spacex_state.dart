@@ -1,24 +1,28 @@
 part of './spacex_bloc.dart';
 
-class SpaceXState extends Equatable {
-  final List<HomeResponseModel> data;
+class SpaceXState<T> extends Equatable {
+  final T data;
   final bool isComplated;
   final BaseHttpStatus status;
   final bool showLoading;
 
-  const SpaceXState(
-      {this.data = const [], this.isComplated = false, this.status = BaseHttpStatus.init, this.showLoading = true});
+  const SpaceXState({
+    required this.data,
+    this.isComplated = false,
+    this.status = BaseHttpStatus.init,
+    this.showLoading = true,
+  });
 
   @override
   List<Object?> get props => [data, isComplated, status, showLoading];
 
-  SpaceXState copyWith({
-    List<HomeResponseModel>? data,
+  SpaceXState<T> copyWith({
+    T? data,
     bool? isComplated,
     BaseHttpStatus? status,
     bool? showLoading,
   }) {
-    return SpaceXState(
+    return SpaceXState<T>(
       data: data ?? this.data,
       isComplated: isComplated ?? this.isComplated,
       status: status ?? this.status,

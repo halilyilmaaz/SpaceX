@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:spacex/App/Utils/components/Buttons/gradient_button.dart';
-import 'package:spacex/App/Utils/components/Buttons/text_button.dart';
-import 'package:spacex/App/Utils/components/view/spacex_background_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spacex/App/Utils/Components/Buttons/gradient_button.dart';
+import 'package:spacex/App/Utils/Components/Buttons/text_button.dart';
+import 'package:spacex/App/Utils/Components/view/spacex_background_view.dart';
+import 'package:spacex/Core/Bloc/spacex_bloc.dart';
 import 'package:spacex/Core/Models/Response/HomeModel.dart';
+import 'package:spacex/Screens/Detail/Widgets/hacker_video_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -20,6 +23,15 @@ class _DetailViewState extends State<DetailView> {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  Future alertDialog() async {
+    context.read<SpaceXBloc>().add(SpaceXDelete(widget.model.id ?? ""));
+    showDialog(
+        context: context,
+        builder: (context) {
+          return HackerVideoView();
+        });
   }
 
   late YoutubePlayerController controller;
@@ -59,7 +71,8 @@ class _DetailViewState extends State<DetailView> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,7 +93,7 @@ class _DetailViewState extends State<DetailView> {
                         // textAlign: TextAlign.center,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(18.0),
+                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 6),
                         child: Container(
                           color: Colors.brown,
                           child: Row(
@@ -127,6 +140,7 @@ class _DetailViewState extends State<DetailView> {
                       CustomOutline(
                         onTap: () {
                           // delete fonk çağrılacak
+                          alertDialog();
                         },
                         strokeWidth: 1,
                         radius: 20,
@@ -158,6 +172,7 @@ class _DetailViewState extends State<DetailView> {
                           ),
                         ),
                       ),
+                      const SafeArea(child: SizedBox(height: 10))
                     ],
                   ),
                 ),

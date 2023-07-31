@@ -11,6 +11,9 @@ class HttpUrl {
   /// RocketList
   static const String rocketList = 'v4/launches';
 
+  /// Delete Rocket 
+  static String deleteRocket(String rocketId) => '/$rocketId';
+
   ///  Home sayfasındaki dashboard
   static const homeUrl = "home.json";
   static dashboardUrl(int ownerId) =>
